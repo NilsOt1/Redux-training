@@ -20,6 +20,9 @@ export const favoritesSlice = createSlice({
     addtoFavorite(state, action) {
       state.push(action.payload);
     },
+    removeFromFavorite(state, action) {
+      return state.filter((item) => item.id !== action.payload.id);
+    },
   },
 });
 
@@ -28,4 +31,4 @@ export default combineReducers({
   favorites: favoritesSlice.reducer,
 });
 export const { addItem, removeItem } = cartSlice.actions;
-export const { addtoFavorite } = favoritesSlice.actions;
+export const { addtoFavorite, removeFromFavorite } = favoritesSlice.actions;
