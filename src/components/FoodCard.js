@@ -3,6 +3,8 @@ import { useDispatch } from "react-redux";
 import { addItem } from "../redux/slices";
 import { useState } from "react";
 import InfoModal from "./InfoModal";
+import { useSelector } from "react-redux";
+import { addtoFavorite } from "../redux/slices";
 
 export default function FoodCard({ food }) {
   const [showModal, setShowModal] = useState(false);
@@ -10,6 +12,10 @@ export default function FoodCard({ food }) {
 
   const handleAddToCart = (item) => {
     dispatch(addItem(item));
+  };
+
+  const handleLikeClick = (item) => {
+    dispatch(addtoFavorite(item));
   };
 
   const handleModalOpen = () => {
@@ -30,6 +36,9 @@ export default function FoodCard({ food }) {
         </button>
         <button type="button" onClick={handleModalOpen}>
           Infos
+        </button>
+        <button txpe="button" onClick={() => handleLikeClick(food)}>
+          Like
         </button>
         <InfoModal
           food={food}
