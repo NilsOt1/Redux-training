@@ -7,7 +7,13 @@ export const foodsApi = createApi({
   }),
   endpoints: (builder) => ({
     getAllFoods: builder.query({
-      query: () => "/",
+      query: (page = 1, perPage = 5) => ({
+        url: "/",
+        params: {
+          page,
+          per_page: perPage,
+        },
+      }),
     }),
   }),
 });
