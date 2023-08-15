@@ -19,3 +19,16 @@ export const StyledFoodItem = styled.li`
   padding: 10px;
   list-style-type: none;
 `;
+
+export const StyledInfoModal = styled.section`
+  border: none;
+  border-radius: 20px;
+  text-align: center;
+  background-color: lightgrey;
+  position: fixed;
+  width: 350px;
+  height: 190px;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+`;
