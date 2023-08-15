@@ -6,6 +6,7 @@ export default function Navigation() {
     <StyledNavigation>
       <NavLink to="/">Home</NavLink>
       <NavLink to="/Cart">Warenkorb</NavLink>
+      <NavLink to="/Favorites">Favorites</NavLink>
     </StyledNavigation>
   );
 }

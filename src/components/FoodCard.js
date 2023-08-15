@@ -3,7 +3,6 @@ import { useDispatch } from "react-redux";
 import { addItem } from "../redux/slices";
 import { useState } from "react";
 import InfoModal from "./InfoModal";
-import { useSelector } from "react-redux";
 import { addtoFavorite } from "../redux/slices";
 
 export default function FoodCard({ food }) {

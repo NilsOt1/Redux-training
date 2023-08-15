@@ -1,9 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
 import { removeItem } from "../redux/slices";
+import { StyledFoodItem } from "./styles";
 
 export default function CartList() {
   const dispatch = useDispatch();
-  const cartItems = useSelector((state) => state.cart);
+  const cartItems = useSelector((state) => state.reducer.cart);
 
   const handleRemoveFromCart = (item) => {
     dispatch(removeItem(item));
@@ -22,12 +23,12 @@ export default function CartList() {
         <>
           <ul>
             {cartItems.map((item) => (
-              <li key={item.id}>
+              <StyledFoodItem key={item.id}>
                 {item.name} - Preis: {item.phone}
                 <button onClick={() => handleRemoveFromCart(item)}>
                   Aus dem Warenkorb entfernen
                 </button>
-              </li>
+              </StyledFoodItem>
             ))}
           </ul>
           <p>Gesamtpreis: {calculateTotalPrice()}</p>
