@@ -10,7 +10,7 @@ export default function CartList() {
   };
 
   const calculateTotalPrice = () => {
-    return cartItems.reduce((total, item) => total + item.id, 0);
+    return cartItems.reduce((total, item) => total + item.phone, 0);
   };
 
   return (
