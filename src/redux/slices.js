@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, combineReducers } from "@reduxjs/toolkit";
 
 export const cartSlice = createSlice({
   name: "cart",
@@ -13,5 +13,19 @@ export const cartSlice = createSlice({
   },
 });
 
-export default cartSlice.reducer;
+export const favoritesSlice = createSlice({
+  name: "favorites",
+  initialState: [],
+  reducers: {
+    addtoFavorite(state, action) {
+      state.push(action.payload);
+    },
+  },
+});
+
+export default combineReducers({
+  cart: cartSlice.reducer,
+  favorites: favoritesSlice.reducer,
+});
 export const { addItem, removeItem } = cartSlice.actions;
+export const { addtoFavorite } = favoritesSlice.actions;
