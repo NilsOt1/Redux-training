@@ -11,3 +11,11 @@ export const StyledNavigation = styled.nav`
   display: flex;
   gap: 10px;
 `;
+
+export const StyledFoodItem = styled.li`
+  border: solid 1.5px gray;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+  list-style-type: none;
+`;

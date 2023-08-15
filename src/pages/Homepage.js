@@ -1,3 +1,5 @@
+import FoodsList from "../components/FoodsList";
+
 export default function Homepage() {
-  return <p>Home</p>;
+  return <FoodsList />;
 }
