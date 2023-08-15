@@ -1,9 +1,8 @@
 import { useGetAllFoodsQuery } from "../api/foodsApi";
-import { StyledFoodItem } from "./styles";
+import FoodCard from "./FoodCard";
 
 export default function FoodsList() {
   const { data, error, isLoading } = useGetAllFoodsQuery();
-  console.log(data);
   return (
     <div>
       {error ? (
@@ -15,10 +14,7 @@ export default function FoodsList() {
           <h3>Gerichte</h3>
           <ul>
             {data.map((food) => (
-              <StyledFoodItem key={food.id}>
-                <p>Gericht: {food.name}</p>
-                <p>Preis: {food.phone}</p>
-              </StyledFoodItem>
+              <FoodCard key={food.id} food={food} />
             ))}
           </ul>
         </>
